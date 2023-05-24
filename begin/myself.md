@@ -29,9 +29,21 @@
 - [设计与建筑学院通知RSS](https://docs.rsshub.app/university.html#zhe-jiang-gong-ye-da-xue-she-ji-yu-jian-zhu-xue-yuan)
 - [Aria2下载完毕自动邮件通知](https://www.yikzero.com/archives/172/)
 
-## 联系方式
+## 常用应用
 
-- [Twitter](https://twitter.com/yikZero)
-- [Telegram](https://t.me/yikZero)
-- [Github](https://github.com/yikZero)
-- [aUB5aWt6ZXJvLmNvbQ==](https://www.base64decode.org/)
+### 吃饭应用
+
+- Figma
+- Eagle
+- 杜鹃
+- NotePlan
+
+### 娱乐&资讯应用
+
+- Twitter
+- Telegram
+- Readwise Reader（资讯阅读聚合工具）
+- Reeder（rss阅读工具）
+- Infuse
+- Notion
+- 汽水音乐
