@@ -22,6 +22,7 @@ export default defineConfig({
     outlineTitle: '导航栏',
     darkModeSwitchLabel: '外观',
     sidebarMenuLabel: '归档',
+    lastUpdatedText: '最后一次更新于',
     nav: [
       { text: '设计&前端', link: '/web/'},
       { text: 'HomeLab',
@@ -71,7 +72,7 @@ export default defineConfig({
               items: [
                 { text: '概述', link: '/homelab/r4s/ipk/' },
                 { text: 'SmartDNS', link: '/homelab/r4s/ipk/smartdns' },
-                { text: 'Lighttpd', link: '/homelab/r4s/ipk/ligthhpd' },
+                { text: 'Lighttpd', link: '/homelab/r4s/ipk/lighttpd' },
                 { text: 'tailscale', link: '/homelab/r4s/ipk/tailscale' }
               ],
             }
@@ -108,7 +109,7 @@ export default defineConfig({
     },
     
     editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+      pattern: 'https://github.com/yikZero/Blog-VitePress/edit/main/:path',
       text: '在 GitHub 上编辑此页'
     },
 
