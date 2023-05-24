@@ -129,7 +129,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Build with VitePress',
+      message: 'Build with <a href="https://vitepress.dev/">VitePress</a>',
       copyright: 'Copyright © 2022-2023 yikZero'
     },
 
