@@ -10,7 +10,7 @@ docker run -d \
   -e TZ=Asia/Shanghai \
   -v /homeassistant:/config \
   --network=host \
-  ghcr.io/home-assistant/home-assistant:stable
+  homeassistant/home-assistant:latest
 ```
 
 ### 插件安装

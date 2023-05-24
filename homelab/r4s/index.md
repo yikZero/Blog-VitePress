@@ -5,13 +5,14 @@
 * 型号：FriendlyElec NanoPi R4S
 * 架构：ARMv8 Processor x 6
 * 内存：4G
-* 固件：[NanoPi-R4S-Docker-骷髅头💀](https://github.com/DHDAXCW/NanoPi-R4S-R4SE)
+* 固件：[immortalwrt](https://github.com/immortalwrt/immortalwrt)
 * Google Direct
 
 ## 相关链接
 
 ### 固件
 
+* [immortalwrt](https://github.com/immortalwrt/immortalwrt)
 * [iStoreOS](https://fw.koolcenter.com/iStoreOS/r4s/)
   * [相关文档](https://doc.linkease.com/zh/guide/istoreos/)
 * [骷髅头](https://github.com/DHDAXCW/NanoPi-R4S-R4SE)
@@ -22,7 +23,9 @@
 * [balenaEtcher(支持Mac、Windows)](https://github.com/balena-io/etcher)
 * [rufus(支持Windows)](https://rufus.ie/)
 
-写卡后，启动无法打开后台但是有网。可以先写入[清卡固件](https://t.yikzero.com/Ali/Homelab/R4S/%E6%B8%85%E5%8D%A1%E5%9B%BA%E4%BB%B6)
+::: info 多次写入系统或出现异常情况时
+可尝试先格式化内存卡，清卡工具：[SD Memory Card Formatter](https://www.sdcard.org/downloads/formatter/)
+:::
 
 ### 其他
 
