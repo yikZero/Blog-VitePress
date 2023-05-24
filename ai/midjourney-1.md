@@ -100,7 +100,9 @@ Midjourney会有一个社区：[Midjourney Community Showcase](https://www.midjo
 8K detailed, very high res, HDR //可以补充一些增加清晰度的关键词
 ```
 
-![选择第三张图V3（左下角）创建变体产生四个新的图像](</img/CleanShot\_2023-01-13\_at\_20.40.112x (1).png>) ![第四张的兔子更加的可爱，选择U4来进行像素的提升](/img/CleanShot\_2023-01-13\_at\_20.42.242x.png) ![最终生成结果](/img/CleanShot\_2023-01-13\_at\_20.46.462x.png)
+![选择第三张图V3（左下角）创建变体产生四个新的图像](/img/CleanShot\_2023-01-13\_at\_20.40.112x-1.png)
+
+ ![第四张的兔子更加的可爱，选择U4来进行像素的提升](/img/CleanShot\_2023-01-13\_at\_20.42.242x.png) ![最终生成结果](/img/CleanShot\_2023-01-13\_at\_20.46.462x.png)
 
 ## 最终结果展示
 
