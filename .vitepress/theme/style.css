@@ -1,0 +1,135 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+/**
+ * Colors
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --vp-c-brand: #169BFA;
+  --vp-c-brand-light: #2DB8FF;
+  --vp-c-brand-lighter: #54D2FF;
+  --vp-c-brand-lightest: #bcc0ff;
+  --vp-c-brand-dark: #0F81E6;
+  --vp-c-brand-darker: #1367BA;
+  --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
+  /* --vp-c-background: #ffffffB2; */
+}
+
+.dark {
+  /* --vp-c-background: #1e1e20B2; */
+
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: var(--vp-c-brand-light);
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-border: var(--vp-c-brand-light);
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+  --vp-button-brand-active-border: var(--vp-c-brand-light);
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(180deg, #16D1FA 0%, #169BFA 100%);
+
+  --vp-home-hero-image-background-image: linear-gradient(180deg, #16D1FA 0%, #169BFA 100%);
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(72px);
+  }
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+.dark {
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand) !important;
+}
+
+.curtain{
+  display: none;
+}
+
+/* .content-body{
+  background-color: var(--vp-c-background) !important;
+  backdrop-filter: saturate(50%) blur(16px);
+  -webkit-backdrop-filter: saturate(50%) blur(16px);
+} */
+
+html {
+  overflow-y: scroll;
+}
+
+.VPFeature{
+  border: 1px solid #EAECF0 !important;
+  /* background-color: white !important; */
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.dark .VPFeature{
+  border: 1px solid #252529 !important;
+  background-color: #252529;
+}
+
+.VPFeature:hover{
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  transition: all 300ms;
+}
+
+.VPFeature .details{
+  padding-top: 4px;
+}
+
+.VPFeature .link-text{
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.VPFeature:hover .link-text{
+  opacity: 1;
+}
+
+.VPFeature .icon{
+  background-color: var(--vp-c-bg-soft-down);
+}
