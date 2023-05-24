@@ -26,16 +26,6 @@
 <path d="M16 12L12 8M12 8L8 12M12 8V16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#4186E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> #Duotone
 ```
 
-**非渐变svg图标与色彩相关的属性：**
-
-| 键名            | 功能说明                                            | 默认值 | 可用值/要求                                                 | 举例                       |
-|:---:|:---:|:---:|:---:|:---:|
-| fill            | 定义形状内部的填充颜色                              | 无    | 十六进制颜色，RGB颜色，RGBA颜色，颜色名称，无颜色          | fill="#4186E7"            |
-| stroke          | 定义形状边框的颜色                                  | 无    | 十六进制颜色，RGB颜色，RGBA颜色，颜色名称，无颜色          | stroke="purple"           |
-| fill-opacity    | 定义形状内部填充颜色的透明度                        | 无    | 0到1之间的透明度值                                        | fill-opacity="0.8"        |
-| stroke-opacity  | 定义形状边框颜色的透明度                            | 无    | 0到1之间的透明度值                                        | stroke-opacity="0.5"      |
-
-**渐变svg图标与色彩相关的属性：**
 ```html
 <defs>
 <linearGradient id="paint0_linear_1403_58" x1="2" y1="2" x2="22" y2="2" gradientUnits="userSpaceOnUse">
@@ -44,22 +34,15 @@
 </linearGradient>
 </defs>
 ```
+::: info W3C的svg属性索引
+[https://www.w3.org/TR/SVG/propidx.html](https://www.w3.org/TR/SVG/propidx.html)
+:::
 
-| 键名            | 功能说明                                                    | 默认值          | 可用值/要求                                        | 举例                      |
-|:---:|:----------:|:---:|:---:|:---:|
-| defs            | 包含渐变色彩的定义                                          | 无             | 无                                                | <defs>...</defs>          |
-| linearGradient  | 创建线性渐变                                                | 无             | 无                                                | <linearGradient>...</linearGradient> |
-| x1              | 线性渐变的起点x坐标                                         | 无             | 数值或百分比                                       | x1="2"                    |
-| y1              | 线性渐变的起点y坐标                                         | 无             | 数值或百分比                                       | y1="2"                    |
-| x2              | 线性渐变的终点x坐标                                         | 无             | 数值或百分比                                       | x2="22"                   |
-| y2              | 线性渐变的终点y坐标                                         | 无             | 数值或百分比                                       | y2="2"                    |
-| gradientUnits   | 渐变的坐标系类型                                            | objectBoundingBox | objectBoundingBox, userSpaceOnUse       | gradientUnits="userSpaceOnUse" |
-| stroke          | 将属性绑定到具有特定id的元素                                | 无             | url(#id)                                          | stroke="url(#id)"         |
-| stop            | 创建渐变的停止点                                            | 无             | 无                                                | <stop .../>               |
-| stop-color      | 停止点的颜色值                                              | 无             | 颜色值（例如 #7F56D9）                              | stop-color="#7F56D9"      |
-| offset          | 停止点在渐变中的相对位置，范围为0到1                        | 0              | 0到1的数值或百分比                                 | offset="1"                |
+- 纯色图标中，与色彩相关的是`fill`和`stroke`
+- 渐变图标中，增加了`gradientUnits`渐变方式和`stop-color`渐变停止处使用的颜色
+- 通过配合`xy`位置、`opacity`透明度属性来实现基本的色彩变化
 
-如果我们需要调整图标的色彩，那么我们主要在fill和stroke属性入手。
+那么我们直接通过`img`引入`svg`，调整`img`的色彩属性是否能够解决这个问题
 
 ## 方案测试
 
