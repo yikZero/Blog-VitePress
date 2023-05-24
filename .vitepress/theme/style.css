@@ -156,3 +156,7 @@ html {
   margin-top: 12px;
   border-top: none;
 }
+
+.vp-doc th{
+  min-width: 120px !important;
+}
