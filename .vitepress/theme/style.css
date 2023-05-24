@@ -147,3 +147,7 @@ html {
 .VPFeature .icon{
   background-color: var(--vp-c-bg-soft-down);
 }
+
+.logo{
+  -webkit-transform: translate3d(0,0,0);
+}
