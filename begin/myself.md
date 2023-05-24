@@ -35,6 +35,7 @@
 
 - Figma
 - Eagle
+- ChatGPT
 - 杜鹃
 - NotePlan
 
