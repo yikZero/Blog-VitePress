@@ -4,6 +4,7 @@
 .DS_Store
 .idea
 .temp
+.test
 .vite_opt_cache
 .vscode
 .vitepress/dist*
