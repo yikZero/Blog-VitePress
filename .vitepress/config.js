@@ -7,7 +7,7 @@ export default defineConfig({
   description: "记录我所学到的",
   lastUpdated: true,
   markdown: {
-    lineNumbers: true
+    theme: 'one-dark-pro',
   },
   themeConfig: {
     logo: '/logo.svg',
@@ -21,7 +21,7 @@ export default defineConfig({
     returnToTopLabel: '返回顶部',
     outlineTitle: '导航栏',
     darkModeSwitchLabel: '外观',
-    sidebarMenuLabel: '归档',
+    sidebarMenuLabel: '目录',
     lastUpdatedText: '最后一次更新于',
     nav: [
       { text: '设计&前端', link: '/web/'},
@@ -114,11 +114,11 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'twitter', link: 'https://twitter.com/yikZero' }
+      { icon: 'github', link: 'https://github.com/yikZero' },
     ],
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: 'Build with VitePress',
       copyright: 'Copyright © 2022-2023 yikZero'
     },
 
