@@ -30,10 +30,21 @@ export default defineConfig({
             { text: 'R4S', link: '/homelab/r4s/' },
             { text: 'Linksys', link: '/homelab/linksys/' }
         ] },
-      { text: 'AI', link: '/ai/' }
+      { text: 'AI', link: '/ai/' },
+      { text: '畅谈', link: '/journal/' },
     ],
 
     sidebar: {
+      '/begin/': [
+        {
+          text: '开始阅读',
+          collapsed: false,
+          items: [
+            { text: '阅读须知', link: '/begin/guide' },
+            { text: '关于博主', link: '/begin/myself' }
+          ]
+        }
+      ],
       '/web/': [
         {
           text: '设计',

@@ -151,3 +151,7 @@ html {
 .logo{
   -webkit-transform: translate3d(0,0,0);
 }
+
+.vp-doc h2{
+  border-top: none;
+}
