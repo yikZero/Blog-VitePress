@@ -1,2 +1,19 @@
-# Misc
+/coverage
+*.log
+*.tgz
 .DS_Store
+.idea
+.temp
+.vite_opt_cache
+.vscode
+.vitepress/dist*
+cache
+.vitepress/cache
+examples-temp
+node_modules
+pnpm-global
+.env.local
+.env.*.local
+
+# json
+meta.json
