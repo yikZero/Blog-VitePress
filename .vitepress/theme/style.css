@@ -153,5 +153,6 @@ html {
 }
 
 .vp-doc h2{
+  margin-top: 12px;
   border-top: none;
 }

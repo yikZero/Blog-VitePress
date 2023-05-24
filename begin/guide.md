@@ -14,7 +14,6 @@
 ## 相关链接
 
 - [早期博客](https://www.yikzero.com/)
-- [作品集](https://job.yikzero.com/)
 - [资源站](https://t.yikzero.com/)
 
 ## 联系方式
