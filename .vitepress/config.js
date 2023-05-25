@@ -1,8 +1,11 @@
 import { defineConfig } from 'vitepress'
+import algolia from './algolia'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: 'zh-CN',
+  locales: {
+    root: { label: '简体中文', lang: 'zh-CN' },
+  },
   title: "Roominess",
   description: "记录我所学到的",
   lastUpdated: true,
@@ -14,9 +17,6 @@ export default defineConfig({
     docFooter: {
       prev: '上一篇',
       next: '下一篇',
-    },
-    search: {
-      provider: 'local'
     },
     returnToTopLabel: '返回顶部',
     outlineTitle: '导航栏',
@@ -135,7 +135,8 @@ export default defineConfig({
 
     head: [
       { name: 'link', attrs: { rel: 'shortcut icon', href: '/favicon.ico' }},
-    ]    
+    ],
+    algolia,
 
   }
 })
