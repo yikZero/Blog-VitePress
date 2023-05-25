@@ -23,7 +23,7 @@
 ### 编程
 
 - [「Roominess」个人作品集网站](https://github.com/yikZero/Roominess)
-- [ChatGPT翻译插件 PopClip插件](https://github.com/yikZero/ChatGPT-Translate-PopClip-Extension)
+- [ChatGPT划词翻译 PopClip插件](https://github.com/yikZero/ChatGPT-Translate-PopClip-Extension)
 - [学校通行码前端](https://github.com/yikZero/zjut-passcode)
 - [PN532模拟校园卡](https://www.yikzero.com/archives/609/)
 - [设计与建筑学院通知RSS](https://docs.rsshub.app/university.html#zhe-jiang-gong-ye-da-xue-she-ji-yu-jian-zhu-xue-yuan)
