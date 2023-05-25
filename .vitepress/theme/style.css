@@ -160,3 +160,7 @@ html {
 .vp-doc th{
   min-width: 120px !important;
 }
+
+.VPContent img{
+  border-radius: 4px;
+}
