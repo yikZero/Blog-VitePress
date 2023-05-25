@@ -18,3 +18,4 @@ pnpm-global
 
 # json
 meta.json
+public/.DS_Store
