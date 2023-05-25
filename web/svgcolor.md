@@ -51,3 +51,7 @@
 ![直接在css中调整属性值](/img/svg-img-1.png)
 
 如图所示，我们通过css只能调整svg的背景颜色，并不能通过设置`stroke`、`fill`和`color`来对svg图标的色彩产生影响。
+
+## 参考文章
+
+[How can I change the color of an 'svg' element?](https://stackoverflow.com/questions/22252472/how-can-i-change-the-color-of-an-svg-element)
