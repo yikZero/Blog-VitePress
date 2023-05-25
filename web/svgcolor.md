@@ -52,6 +52,20 @@
 
 如图所示，我们通过css只能调整svg的背景颜色，并不能通过设置`stroke`、`fill`和`color`来对svg图标的色彩产生影响。
 
+### 常见解决方案
+
+| 方法 | 优点 | 缺点 |
+| --- | --- | --- |
+| SVG中直接调整`stroke`或`fill`属性 | 提供直接修改方法 | 若SVG为外部资源，可能无法修改其源码 |
+| 设置`fill`为`currentColor`，用CSS控制颜色 | 采用标准的CSS，适用于可直接编辑SVG代码的情况 | 若SVG为外部资源，可能无法修改其源码 |
+| CSS的`mask`属性 | 操作相对简单，适用于SVG为外部资源的情况 | 可能存在浏览器对`mask`属性支持不足的问题 |
+| CSS的`filter`属性 | 可处理外部SVG，适合已知预期颜色的情况 | 可能存在微小的颜色差异，可能影响性能 |
+| `feColorMatrix`过滤器 | 能实现颜色渲染 | 原色可能隐约出现，效果可能不理想 |
+| `feFlood`和`feComposite`过滤器 | 能完美显示预期颜色 | 需定义全局唯一ID，若ID被覆盖，显示效果可能不如预期 |
+| `drop-shadow`滤镜和`transform` | 无需定义SVG标签，通过显示阴影来解决问题 | 需将图片移动至不可见处，否则可能出现重复的图片 |
+
 ## 参考文章
 
 [How can I change the color of an 'svg' element?](https://stackoverflow.com/questions/22252472/how-can-i-change-the-color-of-an-svg-element)
+[<img> 使用 svg 后如何改变颜色](https://zongzi531.com/2020/12/16/img%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8svg%E5%90%8E%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E9%A2%9C%E8%89%B2/)
+[一组独特而强大的工具：SVG 过滤器](https://morioh.com/p/91ef7c31fded)
