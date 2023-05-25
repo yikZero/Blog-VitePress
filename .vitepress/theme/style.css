@@ -168,3 +168,15 @@ html {
 .vp-doc tr:nth-child(2n) :not(pre) > code {
   background-color: #F0F0F0;
 }
+
+.dark .vp-doc tr:nth-child(2n) :not(pre) > code {
+  background-color: #313136;
+}
+
+.medium-zoom-overlay {
+  z-index: 20;
+}
+
+.medium-zoom-image {
+  z-index: 21;
+}
