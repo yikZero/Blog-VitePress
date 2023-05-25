@@ -5,6 +5,7 @@ import './style.css';
 import { useRoute } from 'vitepress';
 import { onMounted, watch, nextTick } from 'vue';
 import mediumZoom from 'medium-zoom';
+import { registerAnalytics, siteIds, trackPageview } from './plugins/baidutongji'
 
 export default {
   ...Theme,
@@ -12,8 +13,7 @@ export default {
   setup() {
     const route = useRoute();
     const initZoom = () => {
-      // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' });
-      new mediumZoom('.main img', { background: 'var(--vp-c-bg)' });
+      mediumZoom('.main img', { background: 'var(--vp-c-bg)' });
     };
     onMounted(() => {
       initZoom();
