@@ -29,7 +29,10 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    // ...
+  enhanceApp({ router }) {
+    registerAnalytics(siteIds);
+    router.onAfterRouteChanged = (to) => {
+      trackPageview(siteIds, to);
+    }
   },
 }
