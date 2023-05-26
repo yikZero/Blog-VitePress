@@ -4,6 +4,29 @@ import sidebar from './sidebar'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  head: [
+    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
+    ['meta', { name: 'author', content: 'yikZero' }],
+    ['meta', { name: 'keywords', content: '设计, 前端, 视觉设计, UI, 代码开发, HomeLab, 家庭实验室, 个性化定制家居方案, AI, 人工智能, ChatGPT' }],
+    ['meta', { name: 'application-name', content: 'Blog｜Roominess' }],
+    ['meta', { name: 'apple-mobile-web-app-title', content: 'Blog｜Roominess' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'default' }],
+    ['meta', { name: 'theme-color', content: '#169bfa' }],
+
+    //favicon
+    ['link', { rel: 'mask-icon', href: '/favicon.svg', color: '#169bfa' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '120x120', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
+    // og
+    ['meta', { property: 'og:title', content: 'Blog｜Roominess' }],
+    ['meta', { property: 'og:description', content: '记录我所学到的，包括设计&前端、HomeLab、人工智能等' }],
+    ['meta', { property: 'og:image', content: '/social-card.png' }],
+    ['meta', { property: 'og:url', content: 'https://blog.yikzero.com/' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
+  ],
   locales: {
     root: { label: '简体中文', lang: 'zh-CN' },
   },
@@ -48,32 +71,6 @@ export default defineConfig({
       message: 'Build with <a href="https://vitepress.dev/">VitePress</a>',
       copyright: 'Copyright © 2022-2023 yikZero'
     },
-
-    head: [
-
-      ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
-      ['meta', { name: 'author', content: 'yikZero' }],
-      ['meta', { name: 'keywords', content: '设计, 前端, 视觉设计, UI, 代码开发, HomeLab, 家庭实验室, 个性化定制家居方案, AI, 人工智能, ChatGPT' }],
-      ['meta', { name: 'application-name', content: 'Blog｜Roominess' }],
-      ['meta', { name: 'apple-mobile-web-app-title', content: 'Blog｜Roominess' }],
-      ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'default' }],
-
-      ['meta', { name: 'theme-color', content: '#169bfa' }],
-
-      //favicon
-      ['link', { rel: 'mask-icon', href: '/img/favicons/favicon.svg', color: '#169bfa' }],
-      ['link', { rel: 'apple-touch-icon', sizes: '120x120', href: '/img/favicons/apple-touch-icon.png' }],
-      ['link', { rel: 'icon', type: 'image/svg+xml', href: '/img/favicons/favicon.svg' }],
-      ['link', { rel: 'icon', type: 'image/png', href: '/img/favicons/favicon.png' }],
-      ['link', { rel: 'shortcut icon', href: '/img/favicons/favicon.ico' }],
-      // og
-      ['meta', { property: 'og:title', content: 'Blog｜Roominess' }],
-      ['meta', { property: 'og:description', content: '记录我所学到的，包括设计&前端、HomeLab、人工智能等' }],
-      ['meta', { property: 'og:image', content: '/img/social-card.png' }],
-      ['meta', { property: 'og:url', content: 'https://blog.yikzero.com/' }],
-      ['meta', { property: 'og:type', content: 'website' }],
-      ['meta', { property: 'og:locale', content: 'zh_CN' }],
-    ],
     algolia,
     sidebar,
 
