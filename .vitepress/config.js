@@ -33,6 +33,7 @@ export default defineConfig({
   title: "Roominess",
   description: "记录我所学到的",
   lastUpdated: true,
+  outDir: './.vitepress/dist',
   markdown: {
     theme: 'one-dark-pro',
   },
