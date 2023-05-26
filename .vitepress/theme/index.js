@@ -1,7 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from "vue";
 import Theme from "vitepress/theme";
-import "./style.css";
+import "./style.less";
 import { inBrowser, useRoute } from "vitepress";
 import { onMounted, watch, nextTick } from "vue";
 import mediumZoom from "medium-zoom";
