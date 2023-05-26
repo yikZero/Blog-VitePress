@@ -12,11 +12,12 @@ export default {
   "/web/": [
     {
       text: "设计",
-      // collapsed: false,
+      collapsed: false,
       items: [],
     },
     {
       text: "前端",
+      collapsed: false,
       items: [
         {
           text: "图标",
@@ -25,46 +26,52 @@ export default {
       ],
     },
   ],
-  "/homelab/r4s/": [
+  "/homelab/": [
     {
-      text: "R4S",
+      text: "家庭网络",
+      collapsed: false,
       items: [
-        { text: "设备信息", link: "/homelab/r4s/" },
-        { text: "基础设置", link: "/homelab/r4s/setting" },
-        { text: "光猫桥接", link: "/homelab/r4s/bridge" },
+        { text: "网络概况", link: "/homelab/web" },
+      ],
+    },
+    {
+      "text": "R4S",
+      collapsed: false,
+      "items": [
+        { "text": "设备信息", "link": "/homelab/r4s/" },
+        { "text": "基础设置", "link": "/homelab/r4s/setting" },
+        { "text": "光猫桥接", "link": "/homelab/r4s/bridge" },
         {
-          text: "Docker",
-          items: [
-            { text: "概述", link: "/homelab/r4s/docker/" },
+          "text": "Docker",
+          "items": [
+            { "text": "概述", "link": "/homelab/r4s/docker/" },
             {
-              text: "Homeassistant",
-              link: "/homelab/r4s/docker/homeassistant",
+              "text": "Homeassistant",
+              "link": "/homelab/r4s/docker/homeassistant",
             },
-            { text: "plex", link: "/homelab/r4s/docker/plex" },
+            { "text": "plex", "link": "/homelab/r4s/docker/plex" },
           ],
         },
         {
-          text: "ipk",
-          items: [
-            { text: "概述", link: "/homelab/r4s/ipk/" },
-            { text: "SmartDNS", link: "/homelab/r4s/ipk/smartdns" },
-            { text: "Lighttpd", link: "/homelab/r4s/ipk/lighttpd" },
-            { text: "tailscale", link: "/homelab/r4s/ipk/tailscale" },
+          "text": "ipk",
+          "items": [
+            { "text": "概述", "link": "/homelab/r4s/ipk/" },
+            { "text": "SmartDNS", "link": "/homelab/r4s/ipk/smartdns" },
+            { "text": "Lighttpd", "link": "/homelab/r4s/ipk/lighttpd" },
+            { "text": "tailscale", "link": "/homelab/r4s/ipk/tailscale" },
           ],
         },
       ],
     },
-  ],
-  "/homelab/linksys/": [
     {
-      text: "Linksys",
-      // collapsed: false,
-      items: [
-        { text: "概述", link: "/homelab/linksys/" },
-        { text: "Linksys桥接模式", link: "/homelab/linksys/linksys-1" },
+      "text": "Linksys",
+      "collapsed": false,
+      "items": [
+        { "text": "概述", "link": "/homelab/linksys/" },
+        { "text": "Linksys桥接模式", "link": "/homelab/linksys/linksys-1" },
       ],
-    },
-  ],
+    }
+  ],  
   "/ai/": [
     {
       text: "ChatGPT",

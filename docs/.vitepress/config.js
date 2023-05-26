@@ -50,11 +50,7 @@ export default defineConfig({
     lastUpdatedText: '最后一次更新于',
     nav: [
       { text: '设计&前端', link: '/web/'},
-      { text: 'HomeLab',
-        items: [
-            { text: 'R4S', link: '/homelab/r4s/' },
-            { text: 'Linksys', link: '/homelab/linksys/' }
-        ] },
+      { text: 'HomeLab', link: '/homelab/web'},
       { text: 'AI', link: '/ai/' },
       { text: '畅谈', link: '/journal/' },
     ],
