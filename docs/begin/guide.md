@@ -13,7 +13,7 @@
 
 ## 相关链接
 
-- [备用站点](https://blog-vite-press.vercel.app/)
+- [备用站点](https://blog-roominess.vercel.app/)
 - [早期博客](https://www.yikzero.com/)
 - [资源站](https://t.yikzero.com/)
 
