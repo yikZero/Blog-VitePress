@@ -3,7 +3,7 @@ import { inBrowser } from 'vitepress'
 /**
  * 统计站点的 ID 列表
  */
-export const siteIds = 'eb1ef90b1e9476b8d3d43088d3ac9c49'
+export const siteIds = '911d6da486b72581a803f5d2d4985579'
 
 window._hmt = window._hmt || [];
 
