@@ -7,9 +7,9 @@
 .test
 .vite_opt_cache
 .vscode
-.vitepress/dist*
+docs/.vitepress/dist*
 cache
-.vitepress/cache
+docs/.vitepress/cache
 examples-temp
 node_modules
 pnpm-global
