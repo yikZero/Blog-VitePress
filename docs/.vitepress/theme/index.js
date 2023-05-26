@@ -5,7 +5,7 @@ import "./style.less";
 import { inBrowser, useRoute } from "vitepress";
 import { onMounted, watch, nextTick } from "vue";
 import mediumZoom from "medium-zoom";
-// import { registerAnalytics, siteIds, trackPageview,} from "./plugins/baidutongji";
+import { registerAnalytics, siteIds, trackPageview } from "./plugins/baidutongji";
 
 export default {
   ...Theme,
@@ -30,12 +30,12 @@ export default {
     });
   },
   enhanceApp({ router }) {
-    // if (inBrowser) {
-    //   registerAnalytics(siteIds);
+    if (inBrowser) {
+      registerAnalytics(siteIds);
 
-    //   router.onAfterRouteChanged = (to) => {
-    //     trackPageview(siteIds, to);
-    //   };
-    // }
+      router.onAfterRouteChanged = (to) => {
+        trackPageview(siteIds, to);
+      };
+    }
   },
 };

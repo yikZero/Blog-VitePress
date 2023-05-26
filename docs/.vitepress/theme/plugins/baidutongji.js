@@ -1,11 +1,13 @@
-import { inBrowser } from 'vitepress'
+import { inBrowser } from "vitepress";
 
 /**
  * 统计站点的 ID 列表
  */
 export const siteIds = '911d6da486b72581a803f5d2d4985579'
 
-window._hmt = window._hmt || [];
+if (inBrowser) {
+  window._hmt = window._hmt || []
+}
 
 /**
  * 注册统计
