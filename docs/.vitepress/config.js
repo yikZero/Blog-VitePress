@@ -22,10 +22,11 @@ export default defineConfig({
     // og
     ['meta', { property: 'og:title', content: 'Blog｜Roominess' }],
     ['meta', { property: 'og:description', content: '记录我所学到的，包括设计&前端、HomeLab、人工智能等' }],
-    ['meta', { property: 'og:image', content: '/social-card.png' }],
+    ['meta', { property: 'og:image', content: 'https://cdn.yikzero.com/social-card.png' }],
     ['meta', { property: 'og:url', content: 'https://blog.yikzero.com/' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    ['meta', { property: 'twitter:image', content: 'https://cdn.yikzero.com/social-card.png' }],
   ],
   locales: {
     root: { label: '简体中文', lang: 'zh-CN' },
