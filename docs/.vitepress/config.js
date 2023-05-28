@@ -27,6 +27,15 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { property: 'twitter:image', content: 'https://cdn.yikzero.com/social-card.png' }],
+    //百度统计
+    ['script', { async: '', src: 'https://hm.baidu.com/hm.js?911d6da486b72581a803f5d2d4985579' }],
+    ['script', {}, `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.getElementsByTagName("script")[0]; 
+        hm.parentNode.insertBefore(hm, hm.nextSibling);
+      })();
+    `],
   ],
   locales: {
     root: { label: '简体中文', lang: 'zh-CN' },
