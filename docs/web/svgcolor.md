@@ -117,7 +117,9 @@
 
 在SVG图形中，我们可以通过使用`mask-image`属性来改变图标的颜色。这种方法的优点是，我们可以使用任何CSS颜色或背景图像作为SVG图标的颜色。
 
-```css
+```html
+<div class="test2-1"></div>
+
 <style>
     .test2-1{
         -webkit-mask-image: url(/img/web/svg-icon-5.svg); // [!code focus]
@@ -140,7 +142,7 @@
 | 灵活性问题 | mask-image方案可能无法实现一些更复杂的颜色调整效果，比如渐变色、模式填充等。 |
 | 使用复杂性 | 相比于直接在SVG文件中调整颜色，使用mask-image方案需要更多的CSS知识和技巧。 |
 
-### 3. 使用filter调整色彩
+### 3. 使用filter过滤调整色彩
 
 <img src="/img/web/svg-icon-6.svg" class="test3-1">
 <img src="/img/web/svg-icon-7.svg" class="test3-2">
@@ -148,47 +150,140 @@
 <style>
     .test3-1{
         margin-top: 16px;
-        filter: invert(46%) sepia(94%) saturate(1917%) hue-rotate(181deg) brightness(99%) contrast(98%);
+    }
+    .test3-2{
+        filter: brightness(0) saturate(100%) invert(71%) sepia(71%) saturate(6130%) hue-rotate(182deg) brightness(101%) contrast(96%);
+        -webkit-filter: brightness(0) saturate(100%) invert(71%) sepia(71%) saturate(6130%) hue-rotate(182deg) brightness(101%) contrast(96%);
     }
 </style>
 
-我们可以在[codepen](https://codepen.io/sosuke/pen/Pjoqqp)将HEX转化为filter过滤色值。
+我们可以在[isotopic](https://isotropic.co/tool/hex-color-to-css-filter/)将HEX转化为filter过滤色值。
 
-```css
+需要注意的是，如果图像本身不是黑色，需要将`brightness(0)`、`saturate(100%)`加入到过滤器的开头。这样SVG图标的色彩都是从黑色这个基准值来调整的。调整出来的颜色相对准确，还有点抽盲盒的感觉。
+
+```html
+<img src="/img/web/svg-icon-6.svg" class="test3-1">
+<img src="/img/web/svg-icon-7.svg" class="test3-2">
+
 <style>
-    .test3-1{
-        margin-top: 16px;
-        filter: invert(46%) sepia(94%) saturate(1917%) hue-rotate(181deg) brightness(99%) contrast(98%); // [!code focus]
+    .test3-2{
+        filter: brightness(0) saturate(100%) invert(71%) sepia(71%) saturate(6130%) hue-rotate(182deg) brightness(101%) contrast(96%); // [!code focus]
+        -webkit-filter: brightness(0) saturate(100%) invert(71%) sepia(71%) saturate(6130%) hue-rotate(182deg) brightness(101%) contrast(96%); // [!code focus]
     }
 </style>
 ```
 
-| 缺点 | 详细描述 |
+[filter支持&兼容性查询](https://caniuse.com/?search=filter)
+
+| 注意点 | 详细描述 |
 | --- | --- |
-| 视觉问题 | 使用filter会对色彩还原度产生影响，看上面的例子就知道，虽然是设定的相同色彩，但依旧有差别。 |
+| 视觉问题 | 使用filter会对色彩还原度产生影响，看上面的例子就知道，虽然是设定的相同色彩，但依旧有些许差别。 |
 | 性能问题 | 使用filter可能会对性能产生影响，特别是当使用一些复杂的filter（如模糊或颜色转换）时，可能会导致页面加载速度变慢，影响用户体验。 |
 | 可访问性问题 | filter可能会影响到网站的可访问性。例如，如果你使用filter改变了文本的颜色，可能会导致颜色对比度不足，使得一些用户难以阅读文本。 |
 | 控制限制 | filter提供的控制可能不如直接在图像编辑软件中编辑图像那么精细。例如，你可能无法精确地控制模糊效果的程度或颜色转换的精确颜色。 |
 
-### 4. 使用drop-shadow、transform调整色彩
+### 4. 使用filter:drop-shadow、transform调整色彩
 
-| 方法 | 优点 | 缺点 |
-| --- | --- | --- |
-| SVG中直接调整`stroke`或`fill`属性 | 提供直接修改方法 | 若SVG为外部资源，可能无法修改其源码 |
-| 设置`fill`为`currentColor`，用CSS控制颜色 | 采用标准的CSS，适用于可直接编辑SVG代码的情况 | 若SVG为外部资源，可能无法修改其源码 |
-| CSS的`mask`属性 | 操作相对简单，适用于SVG为外部资源的情况 | 可能存在浏览器对`mask`属性支持不足的问题 |
-| CSS的`filter`属性 | 可处理外部SVG，适合已知预期颜色的情况 | 可能存在微小的颜色差异，可能影响性能 |
-| `drop-shadow`滤镜和`transform` | 无需定义SVG标签，通过显示阴影来解决问题 | 需将图片移动至不可见处，否则可能出现重复的图片 |
+<div class="test-4-box">
+<img src="/img/web/svg-icon-7.svg" class="test4-1">
+</div>
 
+<style>
+    .test-4-box{
+        margin-top: 16px;
+        width: 48px;
+        height:48px;
+        overflow: hidden;
+    }
+
+    .test4-1{
+        filter: drop-shadow(green 48px 0);
+        transform: translateX(-48px);
+    }
+</style>
+
+设定`drop-shadow`的颜色与位置坐标，生成一个投影。然后通过`transform`将原始SVG图标移出视线外。这也算是比较聪明巧妙的方案。
+
+```html
+<div class="test-4-box">
+<img src="/img/web/svg-icon-7.svg" class="test4-1">
+</div>
+
+<style>
+    .test-4-box{ // [!code focus]
+        margin-top: 16px;
+        width: 48px;
+        height:48px;
+        overflow: hidden; // [!code focus]
+    } // [!code focus]
+
+    .test4-1{ // [!code focus]
+        filter: drop-shadow(green 48px 0); // [!code focus]
+        transform: translateX(-48px); // [!code focus]
+    } // [!code focus]
+</style>
+```
+
+- [drop-shadow支持&兼容性查询](https://caniuse.com/?search=drop-shadow)
+- [transform支持&兼容性查询](https://caniuse.com/?search=transform)
+
+| 注意点 | 详细描述 |
+| --- | --- |
+| 位置移动 | 这种方法实际上是在原始图标上添加了一层颜色，而不是真正地改变了图标的颜色。这可能会导致一些不期望的问题。例如：看得见摸不着，图标只有眼睛看起来在那个位置。 |
+| 代码复杂性 | 使用`drop-shadow`和`transform`需要编写更多的CSS代码，这可能会增加代码的复杂性和维护难度。 |
+| 性能问题 | 使用`drop-shadow`和`transform`可能会导致性能问题，特别是在处理大量的SVG图标时。这是因为这两个属性都需要浏览器进行复杂的计算和渲染。 |
+| 兼容性问题 | 不是所有的浏览器都支持CSS的`drop-shadow`和`transform`属性，特别是一些旧的或者非主流的浏览器。 |
+
+### 5. SVG Sprite
+
+<svg style="height:0; width:0; display:none; viewBox=0 0 0 0;" xmlns="http://www.w3.org/2000/svg">
+
+<symbol id="icon-1" width="48" height="48" viewBox="0 0 24 24">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM7.29289 11.2929L11.2929 7.29289C11.6834 6.90237 12.3166 6.90237 12.7071 7.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071C16.3166 13.0976 15.6834 13.0976 15.2929 12.7071L13 10.4142V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V10.4142L8.70711 12.7071C8.31658 13.0976 7.68342 13.0976 7.29289 12.7071C6.90237 12.3166 6.90237 11.6834 7.29289 11.2929Z" fill="#169bfa"/>
+</symbol>
+
+<symbol id="icon-2" width="48" height="48" viewBox="0 0 24 24">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM7.29289 11.2929L11.2929 7.29289C11.6834 6.90237 12.3166 6.90237 12.7071 7.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071C16.3166 13.0976 15.6834 13.0976 15.2929 12.7071L13 10.4142V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V10.4142L8.70711 12.7071C8.31658 13.0976 7.68342 13.0976 7.29289 12.7071C6.90237 12.3166 6.90237 11.6834 7.29289 11.2929Z" fill="green"/>
+</symbol>
+
+</svg>
+
+<svg style="width:48px; height:48px;"><use xlink:href="#icon-1"/></svg>
+<svg style="width:48px; height:48px;"><use xlink:href="#icon-2"/></svg>
+
+关于[SVG Sprite](https://juejin.cn/post/6844903501890338829#heading-0)的介绍可以看看这篇。
+
+CSS雪碧图中是把多个背景图片放在一张大的图片中，而SVG雪碧图则是把多个`symbol`放在一个大的SVG中，每个`symbol`代表了一个图标，以后每次想要使用图标，只需要写这么一段代码即可：
+
+```html
+<svg>
+    <use :xlink:href="#icon-1"></use>
+</svg>
+```
+
+我们可以通过[svg-sprite-loader](https://github.com/JetBrains/svg-sprite-loader)将所有SVG图标集合在一起。
+
+### 6. SVG 组件
+
+SVG组件就是将`SVG Sprite`封装成方便调用的形式。
+
+[**SVGR**](https://github.com/gregberge/svgr)使用原始SVG并将其转化为**现成的React组件**
+
+[**vue-svg-loader**](https://github.com/damianstasik/vue-svg-loader)使我们在Vue中能以组件形式使用SVG的webpack loader。
+
+具体如何调用，对于刚了解这个内容的我，感觉还有点难。以后会针对「SVG 组件」这个调用SVG的方式再做研究，写一篇文章。
+
+## 写在最后
+
+这篇文章其实是越写是越失落的。从刚开始最初级的，直接在SVG内部进行调整颜色，到最后的封装成组件。由于自己对这方面的不了解，所以大篇幅都在讲一些「奇技淫巧」，算不上正统的解决方案。就跟写论文一样，以为自己的方案很好，资料查着查着，发现别人十年前就已经将这个方案实践了，并写成论文了。这种失落感。。
+
+但另一方面，通过写这篇文章，我也了解到了「SVG 组件」这种相对现代化的处理方式，一下子将自己的认知提升了十年（笑
 
 ## 参考文章
 
-[How can I change the color of an 'svg' element?](https://stackoverflow.com/questions/22252472/how-can-i-change-the-color-of-an-svg-element)
-
-[<img> 使用 svg 后如何改变颜色](https://zongzi531.com/2020/12/16/img%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8svg%E5%90%8E%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E9%A2%9C%E8%89%B2/)
-
-[一组独特而强大的工具：SVG 过滤器](https://morioh.com/p/91ef7c31fded)
-
-[未来必热：SVG Sprites技术介绍](https://www.zhangxinxu.com/wordpress/2014/07/introduce-svg-sprite-technology/)
-
-[SVG进阶-sprite 雪碧图](https://blog.csdn.net/baidu_38242832/article/details/115220009)
+- [How can I change the color of an 'svg' element?](https://stackoverflow.com/questions/22252472/how-can-i-change-the-color-of-an-svg-element)
+- [img 使用 svg 后如何改变颜色](https://zongzi531.com/2020/12/16/img%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8svg%E5%90%8E%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E9%A2%9C%E8%89%B2/)
+- [一组独特而强大的工具：SVG 过滤器](https://morioh.com/p/91ef7c31fded)
+- [未来必热：SVG Sprites技术介绍](https://www.zhangxinxu.com/wordpress/2014/07/introduce-svg-sprite-technology/)
+- [SVG进阶-sprite 雪碧图](https://blog.csdn.net/baidu_38242832/article/details/115220009)
+- [SVG Sprite 使用简介](https://juejin.cn/post/6844903501890338829)
