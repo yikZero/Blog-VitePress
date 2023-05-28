@@ -25,7 +25,7 @@ features:
   - icon: 🏠
     title: HomeLab
     details: 深入了解家庭实验室的硬件与软件设施，实现个性化的定制家居方案
-    link: /homelab/r4s/
+    link: /homelab/web
     linkText: 开始阅读
   - icon: 🤖
     title: AI

@@ -32,6 +32,7 @@ export default {
       collapsed: false,
       items: [
         { text: "网络概况", link: "/homelab/web" },
+        { text: "光猫桥接", link: "/homelab/bridge" },
       ],
     },
     {
@@ -40,7 +41,6 @@ export default {
       "items": [
         { "text": "设备信息", "link": "/homelab/r4s/" },
         { "text": "基础设置", "link": "/homelab/r4s/setting" },
-        { "text": "光猫桥接", "link": "/homelab/r4s/bridge" },
         {
           "text": "Docker",
           "items": [

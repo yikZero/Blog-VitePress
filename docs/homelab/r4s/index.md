@@ -6,7 +6,6 @@
 * 架构：ARMv8 Processor x 6
 * 内存：4G
 * 固件：[immortalwrt](https://github.com/immortalwrt/immortalwrt)
-* Google Direct
 
 ## 相关链接
 
