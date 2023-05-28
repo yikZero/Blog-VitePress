@@ -21,6 +21,7 @@
 }
 .dark .HomeNetworkTopology {
   filter: invert(100%);
+  -webkit-filter: invert(100%);
 }
 /* .shiki.dark-plus {
   display: none;
