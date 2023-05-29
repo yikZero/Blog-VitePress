@@ -1,6 +1,18 @@
 # 基础设置
 
-### 解决重启后自动调整「忽略解析文件」
+## PPPOE拨号
+
+路径：**网络 -> 接口 -> WAN口 -> 编辑 -> 协议：PPPOE**
+
+![R4S-PPPOE设置](/img/homelab/r4s-pppoe.png)
+
+## 路由器后台登录地址调整
+
+路径：**网络 -> 接口 -> LAN口 -> 编辑 -> IPV4地址**
+
+我这边R4S后台IPV4设定为`192.168.31.1`
+
+## 重启后自动复原「忽略解析文件」
 注释`etc/init.d/turboacc`中有关`noresolv`的设置：
 ```sh
 change_dns() {
