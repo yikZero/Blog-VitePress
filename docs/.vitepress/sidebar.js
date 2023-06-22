@@ -13,7 +13,12 @@ export default {
     {
       text: "设计",
       collapsed: false,
-      items: [],
+      items: [
+        {
+          text: "Figma",
+          items: [{ text: "Figma Config 2023", link: "/web/design/FigmaConfig2023" }],
+        },
+      ],
     },
     {
       text: "前端",
@@ -21,7 +26,7 @@ export default {
       items: [
         {
           text: "图标",
-          items: [{ text: "SVG图标色彩调整的策略", link: "/web/svgcolor" }],
+          items: [{ text: "SVG图标色彩调整的策略", link: "/web/frontEnd/svgcolor" }],
         },
       ],
     },
@@ -41,6 +46,7 @@ export default {
       "items": [
         { "text": "设备信息", "link": "/homelab/r4s/" },
         { "text": "基础设置", "link": "/homelab/r4s/setting" },
+        { "text": "Tailscale", "link": "/homelab/r4s/ipk/tailscale" },
         {
           "text": "Docker",
           "items": [
@@ -52,15 +58,14 @@ export default {
             { "text": "plex", "link": "/homelab/r4s/docker/plex" },
           ],
         },
-        {
-          "text": "ipk",
-          "items": [
-            { "text": "概述", "link": "/homelab/r4s/ipk/" },
-            { "text": "SmartDNS", "link": "/homelab/r4s/ipk/smartdns" },
-            { "text": "Lighttpd", "link": "/homelab/r4s/ipk/lighttpd" },
-            { "text": "tailscale", "link": "/homelab/r4s/ipk/tailscale" },
-          ],
-        },
+        // {
+          // "text": "ipk",
+          // "items": [
+          //   { "text": "概述", "link": "/homelab/r4s/ipk/" },
+          //   { "text": "SmartDNS", "link": "/homelab/r4s/ipk/smartdns" },
+            // { "text": "Lighttpd", "link": "/homelab/r4s/ipk/lighttpd" },
+          // ],
+        // },
       ],
     },
     {
@@ -69,6 +74,13 @@ export default {
       "items": [
         { "text": "概述", "link": "/homelab/linksys/" },
         { "text": "Linksys桥接模式", "link": "/homelab/linksys/linksys-1" },
+      ],
+    },
+    {
+      "text": "Mac mini",
+      "collapsed": false,
+      "items": [
+        { "text": "概述", "link": "/homelab/macmini/" },
       ],
     }
   ],  
